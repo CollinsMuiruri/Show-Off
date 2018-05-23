@@ -1,5 +1,32 @@
 {%extends 'showme/base.html'%}
 
-{% block content %}
-{{bock.super}}
+{{block.super}}
+{% load  bootstrap3%}
+{% load static %}
+
+{% block styles %}
+  {% bootstrap_css %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 {% endblock %}
+
+<body>
+  {% block content %}
+  {% for item in images %}
+  <div class="w3-container">
+      <div class="w3-card-4" style="width:50%">
+    <div class="w3-container w3-center">
+    <a href="{% url 'detail' image_id=item.id %}"><img src="{{item.image.url}}" class="img-responsive " alt="Image"style="width:100%"></a>
+    <h1>{{item.image_name}}</h1>
+  </div>
+</div>
+  </div>
+    {% empty %}
+    <h2 class="text-center">Oops! Someone forgot to add a picture today..  </h2>
+
+    {% endfor %}
+
+  </div>
+  {% endblock %}
+</body>

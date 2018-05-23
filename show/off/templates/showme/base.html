@@ -6,9 +6,9 @@
   <meta charset="utf-8">
 
   {% if title %}
-  <title>Galla Pics - {{title}}</title>
+  <title>Showoff - {{title}}</title>
   {% else %}
-    <title> Galla pIcS </title>
+    <title> Showoff </title>
   {% endif %}
 
   {% block styles %}
@@ -18,13 +18,14 @@
 
 </head>
 <body>
+  {% block content %}
     {% include "showme/navbar.html" %}
-
-    {% block content %} <h1 class='text-center'>Here are the pics for {{date|date:"l d-F Y s"}}</h1> {%endblock%}
 
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
      {% bootstrap_javascript %}
     {% endblock %}
+    {% endblock %}
+    
 </body>
 </html>
