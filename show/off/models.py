@@ -66,5 +66,6 @@ class Image(models.Model):
     def update_image(self):
         self.update()
 
-    def get_image_by_id(cls, id):
-        pass
+    def get_image_by_id(cls, image_id):
+        images = cls.objects.filter(image__icontains=image_id)
+        return images

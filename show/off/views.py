@@ -6,9 +6,9 @@ from django.http import Http404
 
 # Create your views here.
 
-
 def welcome(request):
-    return render(request, 'showme/welcome.html')
+    image = Image.objects.all()
+    return render(request, 'showme/welcome.html', {"image": image})
 
 
 def liveshowoffs(request):
@@ -35,8 +35,5 @@ def savedshowoffs(request, past_date):
 
 
 def detail(request, image_id):
-    try:
-        images = Image.objects.get(id=image_id)
-    except DoesNotExist:
-        raise Http404()
-    return render(request, "all-pics/detail.html", {"images": images})
+    image = Image.objects.get(id=image_id)
+    return render(request, 'showme/details.html', {"image": image})

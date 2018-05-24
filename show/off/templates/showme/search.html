@@ -1,0 +1,55 @@
+{%extends 'all-pics/base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+{% block content %}
+
+<style>
+body {
+  background-color: white;
+}
+
+</style>
+<body>
+
+<div class="container">
+
+<div class="pop">
+
+  <div class="row">
+
+    <!-- <form method="get">
+      {{ filter.form.as_p }}
+      <button type="submit">Search</button>
+    </form> -->
+    <ul>
+    {% for item in filter.qs %}
+      <li>{{ item.image_name }}</li>
+      <a href="{% url 'detail' id=item.id %}"><img src="{{item.image.url}}" alt="Norway" style="width:100%"></a>
+    {% endfor %}
+    </ul>
+
+
+
+  </div>
+
+</div>
+
+
+  <div class="row">
+
+  {% if images %}
+    {% for item in images %}
+      <div class="col-sm-6 col-md-3">
+          <h1>{{item.image_name}}</h1>
+      </div>
+
+      <div class="col-sm-6 col-md-3">
+        <a href="{% url 'detail' id=article.id %}"><img src="{{item.image.url}}" alt="Norway" style="width:100%"></a>
+      </div>
+
+    {% endfor %}
+  {% endif %}
+  </div>
+</div>
+</body>
+{% endblock %}

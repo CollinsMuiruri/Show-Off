@@ -1,0 +1,30 @@
+{%extends 'showme/base.html'%} {% block content %}
+{% load static %}
+{% load bootstrap4 %}
+{% block styles %}
+  {% bootstrap_css %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  {% endblock %}
+
+<style>
+p {
+  font-size: 20px;
+}
+h5 {
+  font-size: 20px;
+}
+.w3-container {
+}
+</style>
+<div class="w3-container">
+  <div class="w3-card-4" style="width:50%">
+    <img class="w3-card-img-top" src="{{image.image.url}}" class="img-responsive" alt="{{image_item.image_name}}" style="width:100%">
+  </div>
+    <div class="left">
+      <h5>Name: {{image.image_name}}</h5>
+      <p>Category: {{image.category}}</p>
+      <p>Description: {{image.image_description}}</p>
+      <p> Location:<span class="badge badge-info">{{image.location}}</span></p>
+    </div>
+  </div>
+{% endblock %}
