@@ -1,38 +1,47 @@
-#ShOwOff
-##Author
+# ShOwOff
+
+## Author
 Collins Muiruri
-##Description
+
+## Description
 This is a personal gallery where people get to view my pictures.
-#####Categories in the app
+
+##### Categories in the app
 * Places
 * Feelings
 * Rickster
-#####User stories
+
+##### User stories
 A user can :
 * View different photos that interest me.
 * Click on a single photo to expand and view the details of the photo.
 * Search for different categories of photos.(As stated above)
 * Copy a link to the photo to share around.
 * View photos based on the location they were taken.
-##Prerequisites
+
+## Prerequisites
 Python3.6
-##Installations
+
+## Installations
 * $ git clone https://github.com/CollinsMuiruri/Show-Off
 * $ cd showoff
 * $ Install the virtual environment by running -- python3.6 -m venv virtual
 * $ Activate the virtual environment by running -- source virtual/bin/activate
 * $ Install all the necessary requirements by running pip install -r requirements.txt (Python 3.6).
 * $ Run -- ./manager.py runserver
-##Technologies Used
+
+## Technologies Used
 * HTML5
 * CSS for styling.
 * Bootstrap4
 * Python3.6 language
 * jQuery
 * Django framework
-##Queries
+
+## Queries
 There are no known bugs although if any are encountered or you'd like to comment on anything, Please contact me at [wanyekicollins@gmail.com](https://wanyekicollins@gmail.com)
-##License
+
+## License
 * MIT License
 Copyright (c) 2018 Collins Muiruri
 
