@@ -1,4 +1,4 @@
-# Sh&#x1F605w&#x1F605ff
+# Sh:sunglasses:w:sunglasses:ff
 
 ## Author
 Collins Muiruri
