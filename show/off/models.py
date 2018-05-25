@@ -29,7 +29,7 @@ class Category(models.Model):
         return self.name
 
     @classmethod
-    def search_by_title(cls, search_term):
+    def search_by_category(cls, search_term):
         images = cls.objects.filter(category__icontains=search_term)
         return images
 
@@ -68,4 +68,9 @@ class Image(models.Model):
 
     def get_image_by_id(cls, image_id):
         images = cls.objects.filter(image__icontains=image_id)
+        return images
+
+    @classmethod
+    def search_by_category(cls, search_term):
+        images = cls.objects.filter(category__name__icontains=search_term)
         return images

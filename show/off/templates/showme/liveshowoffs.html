@@ -11,9 +11,16 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 {% endblock %}
 
-
-<body>
+<style>
+#live{
+  background-image: url(./static/images/mort.png);
+  background-attachment: fixed;
+  color: white;
+}
+</style>
+<body id="live">
   {% block content %}
+  {% include "showme/navbar.html" %}
   {% for item in images %}
   <div class="w3-container">
 
@@ -28,7 +35,7 @@
 </div>
   </div>
     {% empty %}
-    <h2 class="text-center" style="font-size:80px">Oops! Someone forgot to add a picture today..  </h2>
+    <h2 class="text-center" style="font-size:80px">Oops! Someone forgot to add a picture today..  &#x1F605</h2>
 
     {% endfor %}
 

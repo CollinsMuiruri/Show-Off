@@ -1,50 +1,33 @@
-{% extends 'showme/base.html' %}
-
+<body id="welcome">
+{%extends 'showme/base.html'%}
 {% block content %}
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-.w3-container {
-  background-color: white;
-}
-p {
-  text-align: left;
-}
-h2 {
-  font-size: 82px;
-}
+{{block.super}}
+<div class="container">
 
-</style>
-<body>
+ <div class="row">
+   {# displaying index Image #}
+{% for item in images %}
+   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-5">
+     <div class="card" style="width: 23rem;">
+       <a href="{% url 'detail' image_id=item.id %}"><img src="{{item.image.url}}" class="img-responsive " alt="Image"style="width:100%"></a>
+       {# <div class="card-body"> #}
 
-  {% for articles_item in articles %}
+       {# <a href="{% url 'image' item.id %}" class="btn btn-blue float-right">about &rarr;</a> #}
+       {# </div> #}
+     </div>
 
-<div class="w3-container">
-  <div class="w3-row">
-    <div class="w3-col-md-2 col-lg-2 col-xs-1 col-sm-1"></div>
-    <div class="w3-col-md-8 col-lg-8 col-xs-9 col-sm-9">
-      <div class="w3-col-md-8 col-lg-8 col-xs-9 col-sm-9">
-
-
-  <h2>{{articles_item.title}}</h2>
-
-  <div class="w3-card-4" style="width:50%">
-  <a href="{% url 'detail' id=articles_item.id %}"><img src="{{articles_item.article_image.url}}" alt="Norway" style="width:100%"></a>
-    <div class="w3-container w3-center">
-      <p>{{articles_item.post}}</p>
-      <p>Location:{{articles_item.location}}</p>
-      <p>Category:{{articles_item.category}}</p>
-      <p>Posted on {{articles_item.pub_date|timesince}}</p>
-    </div>
+   </div>
+   {% empty %}
+  <div class="row">
   </div>
-</div>
-</div>
-</div>
-</div>
-{% empty %}
-<div class="row">
-  <h2 class="text-center">Oops! Someone forgot to add a picture today.. &#x1F605</h2>
+  {% endfor %}
 
-</div>
-{% endfor %}
 </body>
+     </div>
+<center><footer style="font-size:30px;">
+  <div class="copy">
+      <p>&copy; 2018 ShowOff Gallerry viewer. All Rights Reserved | Done by <a>Collins Muiruri</a> </p>
+  </div>
+</footer></center>
+</div>
 {% endblock %}
