@@ -17,6 +17,9 @@
   background-attachment: fixed;
   color: white;
 }
+.p {
+  font-size: 50px;
+}
 </style>
 <body id="live">
   {% block content %}
@@ -36,7 +39,13 @@
   </div>
     {% empty %}
     <h2 class="text-center" style="font-size:80px">Oops! Someone forgot to add a picture today..  &#x1F605</h2>
-
+    <p class="text-center" style="font-size: 40px;">You could go to Allshowoffs for more images</p>
+    <p class="text-center" style="font-size: 30px;">Or just search for categories in The Search Bar:</p>
+    <ul class="text-center" style="font-size: 20px;">
+      <li>Feelings</li>
+      <li>Rickster</li>
+      <li>Places</li>
+    </ul>
     {% endfor %}
 
   </div>
