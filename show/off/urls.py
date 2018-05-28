@@ -4,8 +4,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.welcome, name='welcome'),
-    url(r'^liveshowoffs/$', views.liveshowoffs, name='liveshowoffs'),
+    url(r'^$', views.liveshowoffs, name='liveshowoffs'),
     url(r'^home/$', views.welcome, name='welcome'),
     url(r'^detail/(?P<image_id>\d+)', views.detail, name='detail'),
     url(r'^search', views.search_results, name='search_results'),
