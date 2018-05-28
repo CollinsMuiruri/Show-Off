@@ -4,6 +4,7 @@
 {% block styles %}
   {% bootstrap_css %}
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   {% endblock %}
 
 <style>
@@ -20,13 +21,25 @@ h5 {
 
 <div class="w3-container">
   <div class="w3-card-4" style="width:50%">
-    <img class="w3-card-img-top" src="{{image.image.url}}" class="img-responsive" alt="{{image_item.image_name}}" style="width:100%">
+    <img id="p1" class="w3-card-img-top" src="{{image.image.url}}" class="img-responsive" alt="{{image_item.image_name}}" style="width:100%">
+    <span class="close" id="close-{{image.image.url}}">&times;</span>
+
   </div>
     <div class="left">
       <h5>Name: {{image.image_name}}</h5>
       <p>Category: {{image.category}}</p>
       <p>Description: {{image.image_description}}</p>
       <p> Location:<span class="badge badge-info">{{image.location}}</span></p>
+      <button onclick="copyToClipboard('#p1')">Copy Image link</button>
+      <script>
+      function copyToClipboard(p1) {
+var $temp = $("<input>");
+$("body").append($temp);
+$temp.val($(element).text()).select();
+document.execCommand("copy");
+$temp.remove();
+}
+      </script>
     </div>
   </div>
 {% endblock %}

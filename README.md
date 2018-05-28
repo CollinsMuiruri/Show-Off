@@ -1,5 +1,12 @@
 # Sh:sunglasses:w:sunglasses:ff
 
+![Home Page](show/off/static/images/home.png)
+![Details Page](show/off/static/images/details.png)
+![Search Page](show/off/static/images/search.png)
+![Error Page](show/off/static/images/error.png)
+
+
+
 ## Author
 Collins Muiruri
 
